@@ -160,7 +160,7 @@ public class PomodoroSessionUseCase {
             case "WORK" -> SessionType.WORK;
             case "SHORT_BREAK", "BREAK" -> SessionType.SHORT_BREAK;
             case "LONG_BREAK" -> SessionType.LONG_BREAK;
-            default -> SessionType.WORK;
+            default -> throw new BusinessException("Invalid session type: " + type + ". Valid types are: WORK, SHORT_BREAK, LONG_BREAK");
         };
     }
     
